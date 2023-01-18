@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0E4EF"
+    tools:context=".MenuActivity">
+
+    <ImageView
+        android:id="@+id/o_img1"
+        android:layout_width="236dp"
+        android:layout_height="226dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/logo_goput" />
+
+
+    <Button
+        android:id="@+id/btn_Ayam_Kremes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/o_img1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:width="200dp"
+        android:background="@drawable/button_shape"
+        android:text="Ayam Kremes"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_Soto_Ayam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_Ayam_Kremes"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:width="200dp"
+        android:background="@drawable/button_shape"
+        android:text="Soto Ayam"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_Rujak_Lontong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_Soto_Ayam"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:width="200dp"
+        android:background="@drawable/button_shape"
+        android:text="Rujak Lontong"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_Susu_Soda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_Rujak_Lontong"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:width="200dp"
+        android:background="@drawable/button_shape"
+        android:text="Susu Soda"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_Lemon_Tea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_Susu_Soda"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:width="200dp"
+        android:background="@drawable/button_shape"
+        android:text="Lemon Tea"
+        android:textColor="@color/white"
+        tools:ignore="DuplicateClickableBoundsCheck" />
+
+    <Button
+        android:id="@+id/btn_Thai_Tea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_Susu_Soda"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:width="200dp"
+        android:background="@drawable/button_shape"
+        android:text="Thai Tea"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
