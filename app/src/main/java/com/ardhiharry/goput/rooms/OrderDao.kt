@@ -22,8 +22,8 @@ interface OrderDao {
     fun deleteOrder(order: Order)
 
 //    @Query("SELECT * FROM order")
-//    fun getOrders(): List<Order>
-//
+//    fun getUsers(): List<Order>
+
 //    @Transaction
 //    @Query("SELECT * FROM order WHERE idOrder = idOrder")
 //    fun getOrder(idOrder: Int): List<Order>

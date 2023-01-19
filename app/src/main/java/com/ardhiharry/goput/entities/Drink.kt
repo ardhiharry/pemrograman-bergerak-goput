@@ -4,10 +4,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Category (
+data class Drink (
 
     @PrimaryKey(autoGenerate = true)
-    val idCategory: Byte,
-    val category: String
+    val idDrink: Int,
+    val drink: String
 
 )

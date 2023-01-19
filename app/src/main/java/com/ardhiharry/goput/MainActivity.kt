@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun btnMenuListener() {
-        btnOrder.setOnClickListener {
+        btnMenu.setOnClickListener {
             startActivity(Intent(this, MenuActivity::class.java))
         }
     }

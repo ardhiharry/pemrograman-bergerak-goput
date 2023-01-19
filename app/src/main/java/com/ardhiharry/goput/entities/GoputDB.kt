@@ -4,19 +4,19 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.ardhiharry.goput.rooms.CategoryDao
+import com.ardhiharry.goput.rooms.DrinkDao
+import com.ardhiharry.goput.rooms.FoodDao
 import com.ardhiharry.goput.rooms.OrderDao
-import com.ardhiharry.goput.rooms.MenuDao
 import com.ardhiharry.goput.rooms.UserDao
 
 @Database(
-    entities = [Menu::class, Category::class, User::class, Order::class],
+    entities = [Food::class, Drink::class, User::class, Order::class],
     version = 1
 )
 abstract class GoputDB : RoomDatabase(){
 
-    abstract fun productDao() : MenuDao
-    abstract fun categoryDao() : CategoryDao
+    abstract fun foodDao() : FoodDao
+    abstract fun drinkDao() : DrinkDao
     abstract fun userDao() : UserDao
     abstract fun orderDao() : OrderDao
 
