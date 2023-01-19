@@ -28,10 +28,10 @@ class ThaiTeaActivity : AppCompatActivity() {
         btnThaiTea.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 db.foodDao().addFood(
-                    Food(0, textFoodThaiTea.text.toString())
+                    Food(0, textDrinkThaiTea.text.toString())
                 )
                 db.orderDao().addOrder(
-                    Order(0, textUserThaiTea.text.toString(), textFoodThaiTea.text.toString(), "")
+                    Order(0, textUserThaiTea.text.toString(), "", textDrinkThaiTea.text.toString())
                 )
                 db.userDao().addUser(
                     User(0, textUserThaiTea.text.toString())

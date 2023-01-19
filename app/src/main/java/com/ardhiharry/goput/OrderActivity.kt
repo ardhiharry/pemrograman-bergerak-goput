@@ -1,11 +1,15 @@
 package com.ardhiharry.goput
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ardhiharry.goput.adapter.OrderAdapter
 import com.ardhiharry.goput.entities.GoputDB
+import com.ardhiharry.goput.entities.Order
+import com.ardhiharry.goput.rooms.Constant
 import kotlinx.android.synthetic.main.activity_order.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -35,8 +39,21 @@ class OrderActivity : AppCompatActivity() {
         }
     }
 
+    fun intentEdit(idOrder: Int, intentType: Int) {
+        startActivity(
+            Intent(applicationContext, EditOrderActivity::class.java)
+                .putExtra("intent_id", idOrder)
+                .putExtra("intent_type", intentType)
+        )
+    }
+
     private fun setupRecyclerView() {
-        orderAdapter = OrderAdapter(arrayListOf())
+        orderAdapter = OrderAdapter(arrayListOf(), object : OrderAdapter.OnAdapterListener {
+            override fun onClick(order: Order) {
+                intentEdit(order.idOrder, Constant.TYPE_READ)
+            }
+
+        })
         listOrder.apply {
             layoutManager = LinearLayoutManager(applicationContext)
             adapter = orderAdapter

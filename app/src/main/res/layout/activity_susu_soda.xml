@@ -31,7 +31,7 @@
             android:src="@drawable/susu_soda" />
 
         <TextView
-            android:id="@+id/textFoodSusuSoda"
+            android:id="@+id/textDrinkSusuSoda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SUSU SODA"

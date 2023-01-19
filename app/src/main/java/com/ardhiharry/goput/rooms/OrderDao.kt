@@ -15,8 +15,10 @@ interface OrderDao {
     @Delete
     fun deleteOrder(order: Order)
 
-    @Transaction
     @Query("SELECT * FROM [order]")
     fun getOrders(): List<Order>
+
+    @Query("SELECT * FROM [order] WHERE idOrder=:id_order")
+    fun getOrder(id_order: Int): List<Order>
 
 }
