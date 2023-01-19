@@ -1,40 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderActivity"
-    android:background="@color/primaryColor">
+    tools:context=".OrderActivity">
 
-    <TextView
-        android:id="@+id/textPesananSukses"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listOrder"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:textColor="@color/secondaryColor"
-        android:text="PESANAN SUKSES"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-    <ImageView
-        android:id="@+id/imgCheck"
-        android:layout_width="162dp"
-        android:layout_height="172dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/check"
-        android:layout_below="@+id/textPesananSukses"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="selesai"
-        android:layout_below="@+id/imgCheck"
-        android:background="@drawable/button_shape"
-        android:width="150dp"
-        android:textColor="@color/white"/>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

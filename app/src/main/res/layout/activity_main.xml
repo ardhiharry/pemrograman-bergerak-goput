@@ -17,7 +17,7 @@
         android:src="@drawable/logo_goput" />
 
     <Button
-        android:id="@+id/btnCustomer"
+        android:id="@+id/btnListOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/img1"
@@ -25,7 +25,7 @@
         android:layout_marginTop="50dp"
         android:width="200dp"
         android:background="@drawable/button_shape"
-        android:text="List Customer"
+        android:text="List order"
         android:textColor="@color/white"
         android:textSize="15dp" />
 
@@ -33,7 +33,7 @@
         android:id="@+id/btnMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnCustomer"
+        android:layout_below="@+id/btnListOrder"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:width="200dp"
