@@ -13,7 +13,10 @@ data class Order (
     @ForeignKey(entity = User::class, parentColumns = ["idUser"], childColumns = ["customerName"])
     val customerName: String,
 
-    @ForeignKey(entity = Menu::class, parentColumns = ["idMenu"], childColumns = ["MenuOrdered"])
-    val MenuOrdered: String
+    @ForeignKey(entity = Food::class, parentColumns = ["idFood"], childColumns = ["FoodOrdered"])
+    val FoodOrdered: String,
+
+    @ForeignKey(entity = Drink::class, parentColumns = ["idDrink"], childColumns = ["DrinkOrdered"])
+    val DrinkOrdered: String
 
 )

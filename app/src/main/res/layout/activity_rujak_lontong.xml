@@ -33,8 +33,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="205dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="20dp"
             android:text="RUJAK LONTONG"
             android:textSize="20dp" />
 
@@ -43,11 +43,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="220dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="120dp"
             android:width="130dp"
             android:background="@drawable/button_shape"
             android:text="ORDER"
             android:textColor="@color/white" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="208dp"
+            android:layout_marginTop="55dp"
+            android:width="160dp"
+            android:height="50dp"
+            android:hint="Nama Pemesan"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/primaryColor"
+            android:paddingLeft="16dp"/>
     </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
