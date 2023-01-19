@@ -28,13 +28,13 @@ class AyamKremesActivity : AppCompatActivity() {
         btnAyamKremesOrder.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 db.foodDao().addFood(
-                    Food(0, textFood.text.toString())
+                    Food(0, textFoodAyamKremes.text.toString())
                 )
                 db.orderDao().addOrder(
-                    Order(0, textUser.text.toString(), textFood.text.toString(), "")
+                    Order(0, textUserAyamKremes.text.toString(), textFoodAyamKremes.text.toString(), "")
                 )
                 db.userDao().addUser(
-                    User(0, textUser.text.toString())
+                    User(0, textUserAyamKremes.text.toString())
                 )
                 finish()
             }

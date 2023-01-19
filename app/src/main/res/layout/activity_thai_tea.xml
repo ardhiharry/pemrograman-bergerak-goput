@@ -31,6 +31,7 @@
             android:src="@drawable/thai_tea" />
 
         <TextView
+            android:id="@+id/textFoodThaiTea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="THAI TEA"
@@ -39,7 +40,7 @@
             android:layout_marginTop="20dp"/>
 
         <Button
-            android:id="@+id/btnAyamKremesOrder"
+            android:id="@+id/btnThaiTea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="220dp"
@@ -50,6 +51,7 @@
             android:textColor="@color/white" />
 
         <EditText
+            android:id="@+id/textUserThaiTea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="208dp"

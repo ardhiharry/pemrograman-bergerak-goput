@@ -31,6 +31,7 @@
             android:src="@drawable/rujak_lontong" />
 
         <TextView
+            android:id="@+id/textFoodRujakLontong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="210dp"
@@ -39,7 +40,7 @@
             android:textSize="20dp" />
 
         <Button
-            android:id="@+id/btnAyamKremesOrder"
+            android:id="@+id/btnRujakLontongOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="220dp"
@@ -50,6 +51,7 @@
             android:textColor="@color/white" />
 
         <EditText
+            android:id="@+id/textUserRujakLontong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="208dp"
