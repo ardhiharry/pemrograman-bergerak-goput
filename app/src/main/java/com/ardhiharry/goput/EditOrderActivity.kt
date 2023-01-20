@@ -25,6 +25,7 @@ class EditOrderActivity : AppCompatActivity() {
         setContentView(R.layout.activity_edit_order)
         supportActionBar?.hide()
         setupView()
+        updateListener()
     }
 
     fun setupView() {
@@ -34,6 +35,22 @@ class EditOrderActivity : AppCompatActivity() {
                 button_update.visibility = View.GONE
                 getOrder()
             }
+            Constant.TYPE_UPDATE -> {
+                edit_customer_food.visibility = View.GONE
+                edit_customer_drink.visibility = View.GONE
+                getOrder()
+            }
+        }
+    }
+
+    fun updateListener() {
+        button_update.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                db.orderDao().updateOrder(
+                    Order(idOrder, edit_customer_name.text.toString(), edit_customer_food.text.toString(), edit_customer_drink.text.toString())
+                )
+                finish()
+            }
         }
     }
 
@@ -42,6 +59,8 @@ class EditOrderActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             val orders = db.orderDao().getOrder( idOrder )[0]
             edit_customer_name.setText( orders.customerName )
+            edit_customer_food.setText( orders.FoodOrdered )
+            edit_customer_drink.setText( orders.DrinkOrdered )
         }
     }
 }

@@ -1,15 +1,18 @@
 package com.ardhiharry.goput
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ardhiharry.goput.adapter.OrderAdapter
 import com.ardhiharry.goput.entities.GoputDB
 import com.ardhiharry.goput.entities.Order
 import com.ardhiharry.goput.rooms.Constant
+import kotlinx.android.synthetic.main.activity_edit_order.*
 import kotlinx.android.synthetic.main.activity_order.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -30,6 +33,10 @@ class OrderActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        loadData()
+    }
+
+    fun loadData() {
         CoroutineScope(Dispatchers.IO).launch {
             val orders = db.orderDao().getOrders()
             Log.d("MainActivity", "dbResponse: $orders")
@@ -53,10 +60,37 @@ class OrderActivity : AppCompatActivity() {
                 intentEdit(order.idOrder, Constant.TYPE_READ)
             }
 
+            override fun onUpdate(order: Order) {
+                intentEdit(order.idOrder, Constant.TYPE_UPDATE)
+            }
+
+            override fun onDelete(order: Order) {
+                deleteDialog(order)
+            }
+
         })
         listOrder.apply {
             layoutManager = LinearLayoutManager(applicationContext)
             adapter = orderAdapter
         }
+    }
+
+    private fun deleteDialog(order: Order) {
+        val alertDialog = AlertDialog.Builder(this)
+        alertDialog.apply {
+            setTitle("Konfirmasi")
+            setMessage("Apakah anda yakin ingin menghapus pesanan dari ${order.customerName}?")
+            setNegativeButton("Batal") { dialogInterface, i ->
+                dialogInterface.dismiss()
+            }
+            setPositiveButton("Hapus") { dialogInterface, i ->
+                dialogInterface.dismiss()
+                CoroutineScope(Dispatchers.IO).launch {
+                    db.orderDao().deleteOrder(order)
+                    loadData()
+                }
+            }
+        }
+        alertDialog.show()
     }
 }

@@ -9,7 +9,7 @@ interface OrderDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addOrder(order: Order)
 
-    @Update
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     fun updateOrder(order: Order)
 
     @Delete

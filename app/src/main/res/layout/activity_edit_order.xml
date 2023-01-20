@@ -16,6 +16,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/edit_customer_food"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nama Makanan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_customer_name" />
+
+    <EditText
+        android:id="@+id/edit_customer_drink"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nama Minuman"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_customer_food" />
+
     <Button
         android:id="@+id/button_update"
         android:layout_width="0dp"
@@ -23,7 +41,7 @@
         android:text="UPDATE"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_customer_name"
+        app:layout_constraintTop_toBottomOf="@+id/edit_customer_drink"
         android:layout_marginTop="20dp"
         android:background="@drawable/button_shape"
         android:textColor="@color/white"/>

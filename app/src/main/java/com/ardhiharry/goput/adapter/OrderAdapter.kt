@@ -23,6 +23,12 @@ class OrderAdapter(private  val orders: ArrayList<Order>, private val listener: 
         holder.view.textOrder.setOnClickListener {
             listener.onClick( order )
         }
+        holder.view.icon_edit.setOnClickListener {
+            listener.onUpdate( order )
+        }
+        holder.view.icon_delete.setOnClickListener {
+            listener.onDelete( order )
+        }
     }
 
     override fun getItemCount() = orders.size
@@ -37,6 +43,8 @@ class OrderAdapter(private  val orders: ArrayList<Order>, private val listener: 
 
     interface OnAdapterListener {
         fun onClick(order: Order)
+        fun onUpdate(order: Order)
+        fun onDelete(order: Order)
     }
 
 }
