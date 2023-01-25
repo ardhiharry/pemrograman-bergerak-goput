@@ -28,13 +28,13 @@ class RujakLontongActivity : AppCompatActivity() {
         btnRujakLontongOrder.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 db.foodDao().addFood(
-                    Food(0, textFoodRujakLontong.text.toString())
+                    Food(textFoodRujakLontong.text.toString())
                 )
                 db.orderDao().addOrder(
                     Order(0, textUserRujakLontong.text.toString(), textFoodRujakLontong.text.toString(), "")
                 )
                 db.userDao().addUser(
-                    User(0, textUserRujakLontong.text.toString())
+                    User(textUserRujakLontong.text.toString())
                 )
                 finish()
             }

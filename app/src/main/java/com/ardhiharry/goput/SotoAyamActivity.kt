@@ -28,13 +28,13 @@ class SotoAyamActivity : AppCompatActivity() {
         btnSotoAyamOrder.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 db.foodDao().addFood(
-                    Food(0, textFoodSotoAyam.text.toString())
+                    Food(textFoodSotoAyam.text.toString())
                 )
                 db.orderDao().addOrder(
                     Order(0, textUserSotoAyam.text.toString(), textFoodSotoAyam.text.toString(), "")
                 )
                 db.userDao().addUser(
-                    User(0, textUserSotoAyam.text.toString())
+                    User(textUserSotoAyam.text.toString())
                 )
                 finish()
             }

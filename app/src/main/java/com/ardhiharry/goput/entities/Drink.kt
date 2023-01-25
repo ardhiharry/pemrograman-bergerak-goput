@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 @Entity
 data class Drink (
 
-    @PrimaryKey(autoGenerate = true)
-    val idDrink: Int,
+    @PrimaryKey(autoGenerate = false)
+//    val idDrink: Int,
     val drink: String
 
 )

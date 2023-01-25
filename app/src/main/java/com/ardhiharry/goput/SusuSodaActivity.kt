@@ -25,13 +25,13 @@ class SusuSodaActivity : AppCompatActivity() {
         btnSusuSoda.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 db.drinkDao().addDrink(
-                    Drink(0, textDrinkSusuSoda.text.toString())
+                    Drink(textDrinkSusuSoda.text.toString())
                 )
                 db.orderDao().addOrder(
                     Order(0, textUserSusuSoda.text.toString(), "", textDrinkSusuSoda.text.toString())
                 )
                 db.userDao().addUser(
-                    User(0, textUserSusuSoda.text.toString())
+                    User(textUserSusuSoda.text.toString())
                 )
                 finish()
             }

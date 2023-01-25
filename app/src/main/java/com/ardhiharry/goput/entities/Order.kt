@@ -10,13 +10,13 @@ data class Order (
     @PrimaryKey(autoGenerate = true)
     val idOrder: Int,
 
-    @ForeignKey(entity = User::class, parentColumns = ["idUser"], childColumns = ["customerName"])
+    @ForeignKey(entity = User::class, parentColumns = ["username"], childColumns = ["customerName"])
     val customerName: String,
 
-    @ForeignKey(entity = Food::class, parentColumns = ["idFood"], childColumns = ["FoodOrdered"])
+    @ForeignKey(entity = Food::class, parentColumns = ["food"], childColumns = ["FoodOrdered"])
     val FoodOrdered: String,
 
-    @ForeignKey(entity = Drink::class, parentColumns = ["idDrink"], childColumns = ["DrinkOrdered"])
+    @ForeignKey(entity = Drink::class, parentColumns = ["drink"], childColumns = ["DrinkOrdered"])
     val DrinkOrdered: String
 
 )
