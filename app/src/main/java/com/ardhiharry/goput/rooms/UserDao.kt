@@ -1,10 +1,6 @@
 package com.ardhiharry.goput.rooms
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.ardhiharry.goput.entities.Order
 import com.ardhiharry.goput.entities.User
 
@@ -16,6 +12,9 @@ interface UserDao {
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     fun updateUser(user: User)
+
+    @Delete
+    fun deleteUser(user: User)
 
     @Query("SELECT * FROM user")
     fun getUsers(): List<User>
